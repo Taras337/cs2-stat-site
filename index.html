@@ -9,38 +9,72 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth; /* Плавна прокрутка при кліку на посилання */
         }
 
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Шапка сайту (як на другому фото: логотип зліва, меню справа) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #181818;
+            border-bottom: 1px solid #262626;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #00d2ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00d2ff;
+        }
+
+        nav a.faceit-link:hover {
+            color: #ff5500;
+        }
+
+        /* Основний контейнер для карток */
+        .main-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        header {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        h1 {
-            color: #00d2ff;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            gap: 40px;
+            padding: 40px 20px;
+            flex: 1;
+            max-width: 700px;
+            margin: 0 auto;
             width: 100%;
-            max-width: 600px;
-            margin-bottom: 30px;
         }
 
         .card {
@@ -49,7 +83,7 @@
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            text-align: center;
+            width: 100%;
         }
 
         .card h2 {
@@ -82,7 +116,7 @@
         }
 
         .search-btn {
-            background-color: #ff5500; /* Помаранчевий колір FACEIT */
+            background-color: #ff5500;
             color: #fff;
             border: none;
             padding: 12px 20px;
@@ -101,7 +135,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-bottom: 20px;
         }
 
         .stat-box {
@@ -111,7 +144,6 @@
             border-left: 4px solid #00d2ff;
         }
 
-        /* Особливий колір для лівої границі картки FACEIT */
         .card.faceit-card .stat-box {
             border-left-color: #ff5500;
         }
@@ -127,16 +159,21 @@
             font-weight: bold;
             color: #fff;
         }
-
-        footer {
+        ooter {
+            text-align: center;
             color: #666;
             font-size: 0.9rem;
-            margin-top: auto;
-            padding-bottom: 10px;
+            padding: 20px;
+            border-top: 1px solid #222;
         }
 
         /* Адаптивність для телефонів */
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -148,15 +185,21 @@
 </head>
 <body>
 
+    <!-- ШАПКА САЙТУ (Назва зліва, меню справа) -->
     <header>
-        <h1>CS2 Stat Site</h1>
+        <a href="#" class="logo">CS2 Stat Site</a>
+        <nav>
+            <a href="#premier-section">Premier</a>
+            <a href="#faceit-section" class="faceit-link">FACEIT</a>
+        </nav>
     </header>
 
-    <div class="container">
+    <!-- ОСНОВНИЙ ВМІСТ -->
+    <div class="main-container">
+        
         <!-- ВЕРХНЯ КАРТКА: Premier -->
-        <main class="card">
+        <section id="premier-section" class="card">
             <h2>Premier Statistics</h2>
-            
             <div class="stats-grid">
                 <div class="stat-box">
                     <div class="stat-label">Rating</div>
@@ -175,10 +218,10 @@
                     <div class="stat-value" id="premierHs">--</div>
                 </div>
             </div>
-        </main>
+        </section>
 
         <!-- НИЖНЯ КАРТКА: FACEIT -->
-        <section class="card faceit-card">
+        <section id="faceit-section" class="card faceit-card">
             <h2>FACEIT Statistics</h2>
             
             <div class="search-box">
@@ -205,6 +248,7 @@
                 </div>
             </div>
         </section>
+
     </div>
 
     <footer>
@@ -219,7 +263,6 @@
                 return;
             }
             console.log('Searching FACEIT player:', nickname);
-            // Тут пізніше підключимо запит до FACEIT API
         }
     </script>
 
