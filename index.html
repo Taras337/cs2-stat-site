@@ -146,3 +146,53 @@
 
 </body>
 </html>
+<main class="card">
+        <h2>Your CS2 Statistics</h2>
+        
+        <!-- НОВЕ: Поле для введення нікнейму FACEIT та кнопка пошуку -->
+        <div class="search-box">
+            <input type="text" id="faceitNick" class="search-input" placeholder="Enter FACEIT nickname...">
+            <button class="search-btn" onclick="searchPlayer()">Search</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-label">Kills</div>
+                <div class="stat-value" id="killsVal">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Deaths</div>
+                <div class="stat-value" id="deathsVal">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Headshot %</div>
+                <div class="stat-value" id="hsVal">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Win Rate</div>
+                <div class="stat-value" id="wrVal">--</div>
+            </div>
+        </div>
+
+        <button class="btn">More Features Coming Soon</button>
+    </main>
+
+    <footer>
+        CS2 Stat Site © 2026
+    </footer>
+
+    <!-- НОВЕ: Заготовка під JavaScript-код (працюватиме, коли підключимо API) -->
+    <script>
+        function searchPlayer() {
+            const nickname = document.getElementById('faceitNick').value;
+            if (!nickname) {
+                alert('Будь ласка, введіть нікнейм FACEIT!');
+                return;
+            }
+            console./log('Шукаємо гравця:', nickname);
+            // Тут ми згодом напишемо запит до FACEIT API
+        }
+    </script>
+
+</body>
+</html>
