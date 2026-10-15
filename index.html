@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Stat Site</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00d2ff;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .card h2 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #00d2ff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .btn {
+            background-color: #00d2ff;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #009bb8;
+        }
+
+        footer {
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивність для телефонів */
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CS2 Stat Site</h1>
+    </header>
+
+    <main class="card">
+        <h2>Your CS2 Statistics</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-label">Kills</div>
+                <div class="stat-value">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Deaths</div>
+                <div class="stat-value">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Headshot %</div>
+                <div class="stat-value">--</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Win Rate</div>
+                <div class="stat-value">--</div>
+            </div>
+        </div>
+
+        <button class="btn">More Features Coming Soon</button>
+    </main>
+
+    <footer>
+        CS2 Stat Site © 2026
+    </footer>
+
+</body>
+</html>
