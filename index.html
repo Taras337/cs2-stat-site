@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 Stat Site</title>
+    <title>CS2 Stat Site - Premier</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth; /* Плавна прокрутка при кліку на посилання */
         }
 
         body {
@@ -21,7 +20,6 @@
             flex-direction: column;
         }
 
-        /* Шапка сайту (як на другому фото: логотип зліва, меню справа) */
         header {
             display: flex;
             justify-content: space-between;
@@ -29,9 +27,6 @@
             padding: 20px 40px;
             background-color: #181818;
             border-bottom: 1px solid #262626;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         .logo {
@@ -56,25 +51,20 @@
             transition: color 0.3s ease;
         }
 
+        nav a.active {
+            color: #00d2ff;
+        }
+
         nav a:hover {
             color: #00d2ff;
         }
 
-        nav a.faceit-link:hover {
-            color: #ff5500;
-        }
-
-        /* Основний контейнер для карток */
         .main-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 40px;
             padding: 40px 20px;
             flex: 1;
-            max-width: 700px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .card {
@@ -84,51 +74,13 @@
             padding: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             width: 100%;
+            max-width: 600px;
         }
 
         .card h2 {
             margin-bottom: 20px;
             color: #e0e0e0;
             font-size: 1.5rem;
-        }
-
-        /* Стилі для блоку пошуку FACEIT */
-        .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .search-input {
-            flex: 1;
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            border-radius: 6px;
-            padding: 12px 15px;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-input:focus {
-            border-color: #ff5500;
-        }
-
-        .search-btn {
-            background-color: #ff5500;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background-color: #e04b00;
         }
 
         .stats-grid {
@@ -144,10 +96,6 @@
             border-left: 4px solid #00d2ff;
         }
 
-        .card.faceit-card .stat-box {
-            border-left-color: #ff5500;
-        }
-
         .stat-label {
             font-size: 0.9rem;
             color: #aaa;
@@ -159,7 +107,8 @@
             font-weight: bold;
             color: #fff;
         }
-        ooter {
+
+        footer {
             text-align: center;
             color: #666;
             font-size: 0.9rem;
@@ -167,7 +116,6 @@
             border-top: 1px solid #222;
         }
 
-        /* Адаптивність для телефонів */
         @media (max-width: 600px) {
             header {
                 flex-direction: column;
@@ -177,28 +125,21 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            .search-box {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ШАПКА САЙТУ (Назва зліва, меню справа) -->
     <header>
-        <a href="#" class="logo">CS2 Stat Site</a>
+        <a href="index.html" class="logo">CS2 Stat Site</a>
         <nav>
-            <a href="#premier-section">Premier</a>
-            <a href="#faceit-section" class="faceit-link">FACEIT</a>
+            <a href="index.html" class="active">Premier</a>
+            <a href="faceit.html">FACEIT</a>
         </nav>
     </header>
 
-    <!-- ОСНОВНИЙ ВМІСТ -->
     <div class="main-container">
-        
-        <!-- ВЕРХНЯ КАРТКА: Premier -->
-        <section id="premier-section" class="card">
+        <main class="card">
             <h2>Premier Statistics</h2>
             <div class="stats-grid">
                 <div class="stat-box">
@@ -218,53 +159,12 @@
                     <div class="stat-value" id="premierHs">--</div>
                 </div>
             </div>
-        </section>
-
-        <!-- НИЖНЯ КАРТКА: FACEIT -->
-        <section id="faceit-section" class="card faceit-card">
-            <h2>FACEIT Statistics</h2>
-            
-            <div class="search-box">
-                <input type="text" id="faceitNick" class="search-input" placeholder="Enter FACEIT nickname...">
-                <button class="search-btn" onclick="searchFaceit()">Search</button>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-label">FACEIT Level</div>
-                    <div class="stat-value" id="faceitLevel">--</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-label">Elo</div>
-                    <div class="stat-value" id="faceitElo">--</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-label">K/D Ratio</div>
-                    <div class="stat-value" id="faceitKd">--</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-label">Win Rate</div>
-                    <div class="stat-value" id="faceitWr">--</div>
-                </div>
-            </div>
-        </section>
-
+        </main>
     </div>
 
     <footer>
         CS2 Stat Site © 2026
     </footer>
-
-    <script>
-        function searchFaceit() {
-            const nickname = document.getElementById('faceitNick').value;
-            if (!nickname) {
-                alert('Please enter a FACEIT nickname!');
-                return;
-            }
-            console.log('Searching FACEIT player:', nickname);
-        }
-    </script>
 
 </body>
 </html>
