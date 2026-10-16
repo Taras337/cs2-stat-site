@@ -59,89 +59,53 @@
             color: #ff5500;
         }
 
+        /* Контейнер вирівняний по лівому краю */
         .main-container {
+            padding: 30px 40px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            flex: 1;
+            justify-content: flex-start;
         }
 
         .card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             width: 100%;
-            max-width: 600px;
+            max-width: 320px; /* Вузька картка */
         }
 
         .card h2 {
             margin-bottom: 20px;
             color: #e0e0e0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .search-input {
-            flex: 1;
-            background-color: #2a2a2a;
-            border: 1px solid #444;
-            border-radius: 6px;
-            padding: 12px 15px;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-input:focus {
-            border-color: #ff5500;
-        }
-
-        .search-btn {
-            background-color: #ff5500;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background-color: #e04b00;
-        }
-
+        /* Сітка в один стовпчик (вниз) */
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .stat-box {
             background-color: #2a2a2a;
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             border-left: 4px solid #ff5500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .stat-label {
             font-size: 0.9rem;
             color: #aaa;
-            margin-bottom: 5px;
         }
 
         .stat-value {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #fff;
         }
@@ -152,25 +116,13 @@
             font-size: 0.9rem;
             padding: 20px;
             border-top: 1px solid #222;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .search-box {
-                flex-direction: column;
-            }
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
-  header>
+
+    <header>
         <a href="index.html" class="logo">CS2 Stat Site</a>
         <nav>
             <a href="index.html">Premier</a>
@@ -182,27 +134,22 @@
         <main class="card">
             <h2>FACEIT Statistics</h2>
             
-            <div class="search-box">
-                <input type="text" id="faceitNick" class="search-input" placeholder="Enter FACEIT nickname...">
-                <button class="search-btn" onclick="searchFaceit()">Search</button>
-            </div>
-
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-label">FACEIT Level</div>
-                    <div class="stat-value" id="faceitLevel">--</div>
+                    <span class="stat-label">FACEIT Level</span>
+                    <span class="stat-value" id="faceitLevel">--</span>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-label">Elo</div>
-                    <div class="stat-value" id="faceitElo">--</div>
+                    <span class="stat-label">Elo</span>
+                    <span class="stat-value" id="faceitElo">--</span>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-label">K/D Ratio</div>
-                    <div class="stat-value" id="faceitKd">--</div>
-                </div>
+                    <span class="stat-label">K/D Ratio</span>
+                    <span class="stat-value" id="faceitKd">--</span>
+                    </div>
                 <div class="stat-box">
-                    <div class="stat-label">Win Rate</div>
-                    <div class="stat-value" id="faceitWr">--</div>
+                    <span class="stat-label">Win Rate</span>
+                    <span class="stat-value" id="faceitWr">--</span>
                 </div>
             </div>
         </main>
@@ -211,17 +158,6 @@
     <footer>
         CS2 Stat Site © 2026
     </footer>
-
-    <script>
-        function searchFaceit() {
-            const nickname = document.getElementById('faceitNick').value;
-            if (!nickname) {
-                alert('Please enter a FACEIT nickname!');
-                return;
-            }
-            console.log('Searching FACEIT player:', nickname);
-        }
-    </script>
 
 </body>
 </html>
