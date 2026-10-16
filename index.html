@@ -59,7 +59,7 @@
             color: #00d2ff;
         }
 
-        /* Головний контейнер у лівій частині, але розширений під дашборд */
+        /* Головний контейнер сітки дашборду */
         .main-container {
             padding: 30px 40px;
             display: flex;
@@ -68,15 +68,21 @@
             flex-wrap: wrap;
         }
 
-        /* Твоя стара вузька картка (зліва) */
+        /* Ліва колонка (твоя первинна картка) */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+
         .card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 12px;
             padding: 25px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            width: 100%;
-            max-width: 300px;
         }
 
         .card h2 {
@@ -112,36 +118,42 @@
             color: #fff;
         }
 
-        /* НОВЕ: Весь блок додаткової статистики в стилі csstats.gg (праворуч від твоєї картки) */
+        /* Права колонка з усіма новими блоками дашборду */
         .dashboard-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .dashboard-row {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            flex: 1;
         }
 
-        /* Великі картки для K/D та HLTV Rating з круглими колами */
+        /* Великі картки (K/D та HLTV Rating) */
         .big-stat-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 12px;
             padding: 20px;
-            width: 180px;
+            width: 170px;
             text-align: center;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .big-stat-title {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #aaa;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .circle-stat {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border: 4px solid #00d2ff;
             border-radius: 50%;
             display: flex;
@@ -150,47 +162,135 @@
             justify-content: center;
             margin: 0 auto;
             background-color: #121212;
-            box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.2);
         }
-
         .circle-value {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #fff;
         }
+
         .circle-sub {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #666;
-            margin-top: 2px;
         }
 
-        /* Блок з сіткою додаткових показників (Win Rate, HS%, ADR тощо) */
-        .extra-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .extra-card {
+        /* НОВЕ: Клатчі (Clutch Success) */
+        .clutch-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 12px;
             padding: 20px;
+            flex: 1;
+            min-width: 280px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
-        .extra-card-title {
-            font-size: 0.85rem;
-            color: #aaa;
-            margin-bottom: 8px;
+        .clutch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .extra-card-value {
-            font-size: 1.5rem;
+        .clutch-title {
+            font-size: 0.85rem;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+
+        .clutch-main-val {
+            font-size: 1.2rem;
             font-weight: bold;
             color: #00d2ff;
+        }
+
+        .clutch-grid {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .clutch-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mini-circle {
+            width: 38px;
+            height: 38px;
+            border: 3px solid #00d2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            background-color: #121212;
+        }
+
+        .clutch-label {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* НОВЕ: Ентрі успіх (Entry Success) */
+        .entry-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .entry-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* НОВЕ: Блок останніх матчів та зброї */
+        .matches-weapons-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .matches-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .match-icons-list {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .match-badge {
+            width: 28px;
+            height: 28px;
+            background-color: #2a2a2a;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            border-top: 3px solid #2ecc71; /* Зелений якщо перемога */
+        }
+
+        .match-badge.loss {
+            border-top-color: #e74c3c; /* Червоний якщо поразка */
         }
 
         footer {
@@ -215,67 +315,128 @@
 
     <div class="main-container">
         
-        <!-- Твоя оригінальна картка зліва (ми її залишили!) -->
-        <main class="card">
-            <h2>Premier Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <span class="stat-label">Rating</span>
-                    <span class="stat-value" id="premierRating">--</span>
+        <!-- ЛІВА КОЛОНКА (Твоя картка статистики) -->
+        <div class="left-column">
+            <main class="card">
+                <h2>Premier Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">Rating</span>
+                        <span class="stat-value" id="premierRating">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Win Rate</span>
+                        <span class="stat-value" id="premierWr">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">K/D Ratio</span>
+                        <span class="stat-value" id="premierKd">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Headshot %</span>
+                        <span class="stat-value" id="premierHs">--</span>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-label">Win Rate</span>
-                    <span class="stat-value" id="premierWr">--</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-label">K/D Ratio</span>
-                    <span class="stat-value" id="premierKd">--</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-label">Headshot %</span>
-                    <span class="stat-value" id="premierHs">--</span>
-                </div>
-            </div>
-        </main>
+            </main>
+        </div>
 
-        <!-- НОВЕ: Блоки дашборду як на csstats.gg -->
+        <!-- ПРАВА КОЛОНКА (Дашборд з новими блоками) -->
         <div class="dashboard-section">
             
-            <!-- K/D Колесо -->
-            <div class="big-stat-card">
-                <div class="big-stat-title">K / D</div>
-                <div class="circle-stat" style="border-color: #00d2ff;">
-                    <div class="circle-value">--</div>
-                    <div class="circle-sub">ratio</div>
+            <!-- Рядок 1: K/D, HLTV Rating та Clutch Success -->
+            <div class="dashboard-row">
+                <div class="big-stat-card">
+                    <div class="big-stat-title">K / D</div>
+                    <div class="circle-stat">
+                        <div class="circle-value">--</div>
+                        <div class="circle-sub">ratio</div>
+                    </div>
+                </div>
+
+                <div class="big-stat-card">
+                    <div class="big-stat-title">HLTV Rating</div>
+                    <div class="circle-stat" style="border-color: #2ecc71;">
+                        <div class="circle-value">--</div>
+                        <div class="circle-sub">rating</div>
+                    </div>
+                </div>
+
+                <!-- Clutch Success -->
+                <div class="clutch-card">
+                    <div class="clutch-header">
+                        <span class="clutch-title">Clutch Success</span>
+                        <span class="clutch-main-val">1vX --%</span>
+                    </div>
+                    <div class="clutch-grid">
+                        <div class="clutch-item">
+                            <div class="mini-circle">--</div>
+                            <span class="clutch-label">1v1</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="mini-circle">--</div>
+                            <span class="clutch-label">1v2</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="mini-circle">--</div>
+                            <span class="clutch-label">1v3</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="mini-circle">--</div>
+                            <span class="clutch-label">1v4</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="mini-circle">--</div>
+                            <span class="clutch-label">1v5</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- HLTV Rating Колесо -->
-            <div class="big-stat-card">
-                <div class="big-stat-title">HLTV Rating</div>
-                <div class="circle-stat" style="border-color: #2ecc71;">
-                    <div class="circle-value">--</div>
-                    <div class="circle-sub">rating</div>
+            <!-- Рядок 2: Entry Success та блок Матчів / Зброї -->
+            <div class="dashboard-row">
+                <!-- Entry Success -->
+                <div class="entry-card">
+                    <div class="clutch-header">
+                        <span class="clutch-title">Entry Success</span>
+                        <span class="clutch-main-val" style="color: #2ecc71;">--%</span>
+                        </div>
+                    <div class="entry-grid">
+                        <div class="clutch-item">
+                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px;">
+                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            </div>
+                            <span class="clutch-label" style="margin-top: 5px;">Combined</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px; border-color: #f1c40f;">
+                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            </div>
+                            <span class="clutch-label" style="margin-top: 5px;">T Entries</span>
+                        </div>
+                        <div class="clutch-item">
+                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px; border-color: #3498db;">
+                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            </div>
+                            <span class="clutch-label" style="margin-top: 5px;">CT Entries</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Додаткові квадрати статистики -->
-            <div class="extra-stats-grid">
-                <div class="extra-card">
-                    <div class="extra-card-title">WIN RATE</div>
-                    <div class="extra-card-value" style="color: #2ecc71;">--%</div>
-                </div>
-                <div class="extra-card">
-                    <div class="extra-card-title">HEADSHOT %</div>
-                    <div class="extra-card-value" style="color: #f1c40f;">--%</div>
-                </div>
-                <div class="extra-card">
-                    <div class="extra-card-title">ADR</div>
-                    <div class="extra-card-value" style="color: #e67e22;">--</div>
-                </div>
-                <div class="extra-card">
-                    <div class="extra-card-title">KAST</div>
-                    <div class="extra-card-value" style="color: #9b59b6;">--%</div>
+                <!-- Матчі та історія -->
+                <div class="matches-card">
+                    <div class="clutch-header">
+                        <span class="clutch-title">Recent Matches</span>
+                    </div>
+                    <div class="match-icons-list">
+                        <div class="match-badge">W</div>
+                        <div class="match-badge loss">L</div>
+                        <div class="match-badge">W</div>
+                        <div class="match-badge">W</div>
+                        <div class="match-badge loss">L</div>
+                        <div class="match-badge">W</div>
+                        <div class="match-badge loss">L</div>
+                        <div class="match-badge">W</div>
+                    </div>
                 </div>
             </div>
 
