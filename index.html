@@ -59,13 +59,16 @@
             color: #00d2ff;
         }
 
-        /* Контейнер вирівняний по лівому краю */
+        /* Головний контейнер у лівій частині, але розширений під дашборд */
         .main-container {
             padding: 30px 40px;
             display: flex;
-            justify-content: flex-start;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
         }
 
+        /* Твоя стара вузька картка (зліва) */
         .card {
             background-color: #1e1e1e;
             border: 1px solid #333;
@@ -73,7 +76,7 @@
             padding: 25px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             width: 100%;
-            max-width: 320px; /* Зробили картку вужчою */
+            max-width: 300px;
         }
 
         .card h2 {
@@ -82,7 +85,6 @@
             font-size: 1.3rem;
         }
 
-        /* Сітка в один стовпчик (вниз) */
         .stats-grid {
             display: flex;
             flex-direction: column;
@@ -110,6 +112,87 @@
             color: #fff;
         }
 
+        /* НОВЕ: Весь блок додаткової статистики в стилі csstats.gg (праворуч від твоєї картки) */
+        .dashboard-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        /* Великі картки для K/D та HLTV Rating з круглими колами */
+        .big-stat-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .big-stat-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .circle-stat {
+            width: 110px;
+            height: 110px;
+            border: 4px solid #00d2ff;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            background-color: #121212;
+            box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.2);
+        }
+
+        .circle-value {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .circle-sub {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Блок з сіткою додаткових показників (Win Rate, HS%, ADR тощо) */
+        .extra-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .extra-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .extra-card-title {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-bottom: 8px;
+        }
+
+        .extra-card-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d2ff;
+        }
+
         footer {
             text-align: center;
             color: #666;
@@ -131,6 +214,8 @@
     </header>
 
     <div class="main-container">
+        
+        <!-- Твоя оригінальна картка зліва (ми її залишили!) -->
         <main class="card">
             <h2>Premier Statistics</h2>
             <div class="stats-grid">
@@ -145,13 +230,57 @@
                 <div class="stat-box">
                     <span class="stat-label">K/D Ratio</span>
                     <span class="stat-value" id="premierKd">--</span>
-                    </div>
+                </div>
                 <div class="stat-box">
                     <span class="stat-label">Headshot %</span>
                     <span class="stat-value" id="premierHs">--</span>
                 </div>
             </div>
         </main>
+
+        <!-- НОВЕ: Блоки дашборду як на csstats.gg -->
+        <div class="dashboard-section">
+            
+            <!-- K/D Колесо -->
+            <div class="big-stat-card">
+                <div class="big-stat-title">K / D</div>
+                <div class="circle-stat" style="border-color: #00d2ff;">
+                    <div class="circle-value">--</div>
+                    <div class="circle-sub">ratio</div>
+                </div>
+            </div>
+
+            <!-- HLTV Rating Колесо -->
+            <div class="big-stat-card">
+                <div class="big-stat-title">HLTV Rating</div>
+                <div class="circle-stat" style="border-color: #2ecc71;">
+                    <div class="circle-value">--</div>
+                    <div class="circle-sub">rating</div>
+                </div>
+            </div>
+
+            <!-- Додаткові квадрати статистики -->
+            <div class="extra-stats-grid">
+                <div class="extra-card">
+                    <div class="extra-card-title">WIN RATE</div>
+                    <div class="extra-card-value" style="color: #2ecc71;">--%</div>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-title">HEADSHOT %</div>
+                    <div class="extra-card-value" style="color: #f1c40f;">--%</div>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-title">ADR</div>
+                    <div class="extra-card-value" style="color: #e67e22;">--</div>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-title">KAST</div>
+                    <div class="extra-card-value" style="color: #9b59b6;">--%</div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
     <footer>
