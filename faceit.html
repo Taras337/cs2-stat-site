@@ -299,38 +299,127 @@
             margin-top: 10px;
         }
 
-        .matches-card {
+        /* --- БЛОК С МАТЧАМИ, КАРТАМИ И ОРУЖИЕМ В СТИЛЕ FACEIT --- */
+        .right-stats-container {
             background-color: #12161f;
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
             flex: 1;
-            min-width: 280px;
-        }
-
-        .match-icons-list {
+            min-width: 320px;
             display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            margin-top: 12px;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .match-badge {
-            width: 26px;
-            height: 26px;
+        .matches-header {
+            font-size: 0.8rem;
+            color: #8a96a8;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .match-history-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e2532;
+            padding-bottom: 14px;
+        }
+        .match-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .map-icon {
+            width: 22px;
+            height: 22px;
             background-color: #181f2c;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
-            border-top: 3px solid #2ecc71;
+            font-size: 0.75rem;
+        }
+
+        .match-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ff5500;
+        }
+
+        .match-dot.loss {
+            background-color: #e74c3c;
+        }
+
+        .match-score {
+            font-size: 0.65rem;
+            color: #8a96a8;
             font-weight: bold;
         }
 
-        .match-badge.loss {
-            border-top-color: #e74c3c;
+        .maps-weapons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
         }
+
+        .sub-block-card {
+            background-color: #161a25;
+            border: 1px solid #1e2532;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .sub-block-title {
+            font-size: 0.75rem;
+            color: #8a96a8;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .list-row {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin-bottom: 8px;
+        }
+
+        .list-row-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .list-name {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #ffffff;
+        }
+
+        .list-value {
+            color: #ffffff;
+        }
+
+        .progress-bar-bg {
+            height: 3px;
+            background-color: #202736;
+            border-radius: 2px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #ff5500;
+        }
+
         footer {
             text-align: center;
             color: #5a6678;
@@ -389,7 +478,6 @@
                         <div class="circle-value">1.28</div>
                     </div>
                 </div>
-
                 <div class="clutch-card">
                     <div class="card-header-title">
                         <span>CLUTCH SUCCESS</span>
@@ -473,7 +561,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="stat-block-card">
                     <div class="card-header-title">ADR</div>
                     <div class="main-stat-display">
@@ -497,7 +584,7 @@
                 </div>
             </div>
 
-            <!-- Рядок 3: Entry Success & Matches -->
+            <!-- Рядок 3: Entry Success & Matches / Maps / Weapons -->
             <div class="dashboard-row">
                 <div class="entry-card">
                     <div class="card-header-title">
@@ -526,28 +613,23 @@
                     </div>
                 </div>
 
-                <div class="matches-card">
-                    <div class="card-header-title">MATCHES</div>
-                    <div class="match-icons-list">
-                        <div class="match-badge">W</div>
-                        <div class="match-badge">W</div>
-                        <div class="match-badge">W</div>
-                        <div class="match-badge loss">L</div>
-                        <div class="match-badge">W</div>
-                        <div class="match-badge">W</div>
-                        <div class="match-badge">W</div>
-                        <div class="match-badge loss">L</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <footer>
-        CS2 Stat Site © 2026
-    </footer>
-
-</body>
-</html>
+                <div class="right-stats-container">
+                    <div class="matches-header">MATCHES</div>
+                    <div class="match-history-row">
+                        <div class="match-column">
+                            <div class="map-icon">🏰</div>
+                            <div class="match-dot"></div>
+                            <div class="match-score">13:11</div>
+                        </div>
+                        <div class="match-column">
+                            <div class="map-icon">⭐️</div>
+                            <div class="match-dot loss"></div>
+                            <div class="match-score">12:16</div>
+                        </div>
+                        <div class="match-column">
+                            <div class="map-icon">🏰</div>
+                            <div class="match-dot loss"></div>
+                            <div class="match-score">8:13</div>
+                        </div>
+                        <div class="match-column">
+                            <div class="map-
