@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[17.10.2026 20:11] Taras: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -74,7 +74,6 @@
             display: flex;
             gap: 20px;
             align-items: flex-start;
-            flex-wrap: wrap;
         }
 
         .profile-card {
@@ -82,8 +81,8 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 20px;
-            width: 100%;
-            max-width: 260px;
+            width: 250px;
+            flex-shrink: 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
@@ -138,13 +137,11 @@
             flex-direction: column;
             gap: 18px;
             flex: 1;
-            min-width: 320px;
         }
 
         .dashboard-row {
             display: flex;
             gap: 18px;
-            flex-wrap: wrap;
         }
 
         .big-stat-card {
@@ -152,7 +149,8 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
-            width: 160px;
+            width: 150px;
+            flex-shrink: 0;
             text-align: center;
         }
 
@@ -163,13 +161,12 @@
             font-weight: bold;
             text-transform: uppercase;
         }
-        .circle-stat {
-            width: 95px;
-            height: 95px;
+[17.10.2026 20:11] Taras: .circle-stat {
+            width: 90px;
+            height: 90px;
             border: 4px solid #ff5500;
             border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin: 0 auto;
@@ -188,7 +185,6 @@
             border-radius: 10px;
             padding: 18px;
             flex: 1;
-            min-width: 280px;
         }
 
         .card-header-title {
@@ -238,8 +234,8 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 16px;
-            flex: 1;
-            min-width: 180px;
+            width: 31%;
+            flex-shrink: 0;
         }
 
         .main-stat-display {
@@ -288,8 +284,8 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
-            flex: 1;
-            min-width: 280px;
+            width: 31%;
+            flex-shrink: 0;
         }
 
         .entry-grid {
@@ -299,25 +295,15 @@
             margin-top: 10px;
         }
 
-        /* --- БЛОК С МАТЧАМИ, КАРТАМИ И ОРУЖИЕМ В СТИЛЕ FACEIT --- */
-        .right-stats-container {
+        .matches-full-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
             flex: 1;
-            min-width: 320px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-        }
-
-        .matches-header {
-            font-size: 0.8rem;
-            color: #8a96a8;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 8px;
+            gap: 15px;
         }
 
         .match-history-row {
@@ -325,16 +311,16 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #1e2532;
-            padding-bottom: 14px;
+            padding-bottom: 12px;
         }
+
         .match-column {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 4px;
         }
-
-        .map-icon {
+[17.10.2026 20:11] Taras: .map-icon {
             width: 22px;
             height: 22px;
             background-color: #181f2c;
@@ -364,42 +350,42 @@
 
         .maps-weapons-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 14px;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
         }
 
         .sub-block-card {
             background-color: #161a25;
             border: 1px solid #1e2532;
             border-radius: 8px;
-            padding: 12px;
+            padding: 10px;
         }
 
         .sub-block-title {
             font-size: 0.75rem;
             color: #8a96a8;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .list-row {
             display: flex;
             flex-direction: column;
-            gap: 3px;
-            margin-bottom: 8px;
+            gap: 2px;
+            margin-bottom: 6px;
         }
 
         .list-row-header {
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: bold;
         }
 
         .list-name {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             color: #ffffff;
         }
 
@@ -430,7 +416,7 @@
         }
     </style>
 </head>
-<body>
+[17.10.2026 20:12] Taras: <body>
 
     <div class="top-line"></div>
 
@@ -463,7 +449,7 @@
 
         <div class="dashboard-section">
             
-            <!-- Рядок 1: K/D, HLTV Rating, Clutch Success -->
+            <!-- Рядок 1: K/D, HLTV Rating, Clutch Success, Matches + Maps + Weapons -->
             <div class="dashboard-row">
                 <div class="big-stat-card">
                     <div class="big-stat-title">K / D</div>
@@ -478,6 +464,7 @@
                         <div class="circle-value">1.28</div>
                     </div>
                 </div>
+
                 <div class="clutch-card">
                     <div class="card-header-title">
                         <span>CLUTCH SUCCESS</span>
@@ -506,9 +493,57 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Рядок 2: WIN RATE, HS%, ADR -->
+                <div class="matches-full-card">
+                    <div class="card-header-title" style="margin-bottom: 8px;">MATCHES</div>
+                    <div class="match-history-row">
+                        <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
+                        <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot loss"></div><div class="match-score">12:16</div></div>
+                        <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot loss"></div><div class="match-score">8:13</div></div>
+[17.10.2026 20:12] Taras: <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:9</div></div>
+                        <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
+                        <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
+                        <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot loss"></div><div class="match-score">10:13</div></div>
+                        <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
+                        <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
+                    </div>
+
+                    <div class="maps-weapons-grid">
+                        <div class="sub-block-card">
+                            <div class="sub-block-title">Most Played</div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">721</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">359</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 55%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">310</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🗿 de_anubis</span><span class="list-value">256</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 35%;"></div></div></div>
+                        </div>
+
+                        <div class="sub-block-card">
+                            <div class="sub-block-title">Most Success</div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🎡 de_vertigo</span><span class="list-value">80%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 80%, #e74c3c 20%);"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">70%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 70%, #e74c3c 30%);"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">68%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 68%, #e74c3c 32%);"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">67%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 67%, #e74c3c 33%);"></div></div></div>
+                        </div>
+
+                        <div class="sub-block-card">
+                            <div class="sub-block-title">Most Kills</div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 AK-47</span><span class="list-value">22370</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div></div>
+[17.10.2026 20:12] Taras: <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 M4A1-S</span><span class="list-value">7779</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🎯 AWP</span><span class="list-value">3947</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 30%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 USP-S</span><span class="list-value">3065</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 25%;"></div></div></div>
+                        </div>
+
+                        <div class="sub-block-card">
+                            <div class="sub-block-title">HS%</div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 Desert Eagle</span><span class="list-value">100%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 USP-S</span><span class="list-value">94%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 94%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 Glock-18</span><span class="list-value">92%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 92%;"></div></div></div>
+                            <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 AK-47</span><span class="list-value">87%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 87%;"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            [17.10.2026 20:13] Taras: <!-- Рядок 2: WIN RATE, HS%, ADR та Entry Success -->
             <div class="dashboard-row">
                 <div class="stat-block-card">
                     <div class="card-header-title">WIN RATE</div>
@@ -517,22 +552,10 @@
                         <span class="main-stat-number">67%</span>
                     </div>
                     <div class="details-list">
-                        <div class="detail-row">
-                            <span class="detail-label">PLAYED</span>
-                            <span class="detail-val">1940</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">WON</span>
-                            <span class="detail-val">1303</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">LOST</span>
-                            <span class="detail-val">636</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">TIED</span>
-                            <span class="detail-val">1</span>
-                        </div>
+                        <div class="detail-row"><span class="detail-label">PLAYED</span><span class="detail-val">1940</span></div>
+                        <div class="detail-row"><span class="detail-label">WON</span><span class="detail-val">1303</span></div>
+                        <div class="detail-row"><span class="detail-label">LOST</span><span class="detail-val">636</span></div>
+                        <div class="detail-row"><span class="detail-label">TIED</span><span class="detail-val">1</span></div>
                     </div>
                 </div>
 
@@ -543,24 +566,13 @@
                         <span class="main-stat-number">61%</span>
                     </div>
                     <div class="details-list">
-                        <div class="detail-row">
-                            <span class="detail-label">KILLS</span>
-                            <span class="detail-val">46952</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">DEATHS</span>
-                            <span class="detail-val">29422</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">ASSISTS</span>
-                            <span class="detail-val">8387</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">HEADSHOTS</span>
-                            <span class="detail-val">28840</span>
-                        </div>
+                        <div class="detail-row"><span class="detail-label">KILLS</span><span class="detail-val">46952</span></div>
+                        <div class="detail-row"><span class="detail-label">DEATHS</span><span class="detail-val">29422</span></div>
+                        <div class="detail-row"><span class="detail-label">ASSISTS</span><span class="detail-val">8387</span></div>
+                        <div class="detail-row"><span class="detail-label">HEADSHOTS</span><span class="detail-val">28840</span></div>
                     </div>
                 </div>
+
                 <div class="stat-block-card">
                     <div class="card-header-title">ADR</div>
                     <div class="main-stat-display">
@@ -568,24 +580,12 @@
                         <span class="main-stat-number">113</span>
                     </div>
                     <div class="details-list">
-                        <div class="detail-row">
-                            <span class="detail-label">KAST</span>
-                            <span class="detail-val">78%</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">DAMAGE</span>
-                            <span class="detail-val">4758227</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">ROUNDS</span>
-                            <span class="detail-val">41985</span>
-                        </div>
+                        <div class="detail-row"><span class="detail-label">KAST</span><span class="detail-val">78%</span></div>
+                        <div class="detail-row"><span class="detail-label">DAMAGE</span><span class="detail-val">4758227</span></div>
+                        <div class="detail-row"><span class="detail-label">ROUNDS</span><span class="detail-val">41985</span></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Рядок 3: Entry Success & Matches / Maps / Weapons -->
-            <div class="dashboard-row">
                 <div class="entry-card">
                     <div class="card-header-title">
                         <span>ENTRY SUCCESS</span>
@@ -593,43 +593,34 @@
                     </div>
                     <div class="entry-grid">
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #ff5500;">
-                                <div class="circle-value" style="font-size: 0.95rem;">66%</div>
+                            <div class="circle-stat" style="width: 50px; height: 50px; border-width: 3px; border-color: #ff5500;">
+                                <div class="circle-value" style="font-size: 0.85rem;">66%</div>
                             </div>
                             <span class="stat-sub-label" style="margin-top: 5px;">Combined</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #f1c40f;">
-                                <div class="circle-value" style="font-size: 0.95rem;">61%</div>
+                            <div class="circle-stat" style="width: 50px; height: 50px; border-width: 3px; border-color: #f1c40f;">
+                                <div class="circle-value" style="font-size: 0.85rem;">61%</div>
                             </div>
-                            <span class="stat-sub-label" style="margin-top: 5px;">T Entries</span>
+[17.10.2026 20:13] Taras: <span class="stat-sub-label" style="margin-top: 5px;">T Entries</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #3498db;">
-                                <div class="circle-value" style="font-size: 0.95rem;">70%</div>
+                            <div class="circle-stat" style="width: 50px; height: 50px; border-width: 3px; border-color: #3498db;">
+                                <div class="circle-value" style="font-size: 0.85rem;">70%</div>
                             </div>
                             <span class="stat-sub-label" style="margin-top: 5px;">CT Entries</span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="right-stats-container">
-                    <div class="matches-header">MATCHES</div>
-                    <div class="match-history-row">
-                        <div class="match-column">
-                            <div class="map-icon">🏰</div>
-                            <div class="match-dot"></div>
-                            <div class="match-score">13:11</div>
-                        </div>
-                        <div class="match-column">
-                            <div class="map-icon">⭐️</div>
-                            <div class="match-dot loss"></div>
-                            <div class="match-score">12:16</div>
-                        </div>
-                        <div class="match-column">
-                            <div class="map-icon">🏰</div>
-                            <div class="match-dot loss"></div>
-                            <div class="match-score">8:13</div>
-                        </div>
-                        <div class="match-column">
-                            <div class="map-
+        </div>
+
+    </div>
+
+    <footer>
+        CS2 Stat Site © 2026
+    </footer>
+
+</body>
+</html>
