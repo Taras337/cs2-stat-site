@@ -12,7 +12,7 @@
         }
 
         body {
-            background-color: #121212;
+            background-color: #0b0e14;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
@@ -20,18 +20,24 @@
             flex-direction: column;
         }
 
+        .top-line {
+            height: 3px;
+            background-color: #ff5500;
+            width: 100%;
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #181818;
-            border-bottom: 1px solid #262626;
+            padding: 15px 40px;
+            background-color: #12161f;
+            border-bottom: 1px solid #1e2532;
         }
 
         .logo {
             color: #00d2ff;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -40,19 +46,23 @@
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
-            color: #aaa;
+            color: #8a96a8;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            transition: color 0.3s ease;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
         nav a.active {
-            color: #ff5500;
+            color: #ffffff;
+            background-color: #1e2532;
+            border-bottom: 2px solid #ff5500;
         }
 
         nav a:hover {
@@ -67,89 +77,95 @@
             flex-wrap: wrap;
         }
 
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .profile-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 20px;
             width: 100%;
-            max-width: 300px;
-        }
-
-        .card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
+            max-width: 260px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
-        .card h2 {
-            margin-bottom: 20px;
-            color: #e0e0e0;
-            font-size: 1.3rem;
-        }
-
-        .stats-grid {
+        .profile-header {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .stat-box {
-            background-color: #2a2a2a;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border-left: 4px solid #ff5500;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
-            color: #aaa;
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            background-color: #1e2532;
+            border: 1px solid #2a3447;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
         }
 
-        .stat-value {
-            font-size: 1.2rem;
+        .nickname {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .rank-box {
+            background-color: #181f2c;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+            border-left: 3px solid #ff5500;
+        }
+
+        .rank-title {
+            font-size: 0.75rem;
+            color: #8a96a8;
+            text-transform: uppercase;
+        }
+
+        .rank-val {
+            font-size: 1.1rem;
             font-weight: bold;
             color: #fff;
+            margin-top: 3px;
         }
 
         .dashboard-section {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             flex: 1;
             min-width: 320px;
         }
 
         .dashboard-row {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
         .big-stat-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            width: 170px;
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
+            width: 160px;
             text-align: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .big-stat-title {
-            font-size: 0.85rem;
-            color: #aaa;
+            font-size: 0.8rem;
+            color: #8a96a8;
             margin-bottom: 12px;
+            font-weight: bold;
             text-transform: uppercase;
         }
-
         .circle-stat {
-            width: 100px;
-            height: 100px;
+            width: 95px;
+            height: 95px;
             border: 4px solid #ff5500;
             border-radius: 50%;
             display: flex;
@@ -157,7 +173,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto;
-            background-color: #121212;
+            background-color: #0b0e14;
         }
 
         .circle-value {
@@ -166,37 +182,24 @@
             color: #fff;
         }
 
-        .circle-sub {
-            font-size: 0.65rem;
-            color: #666;
-        }
-        [16.10.2026 21:40] Taras: .clutch-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
+        .clutch-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
             flex: 1;
             min-width: 280px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
-        .clutch-header {
+        .card-header-title {
+            font-size: 0.8rem;
+            color: #8a96a8;
+            font-weight: bold;
+            text-transform: uppercase;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
-        }
-
-        .clutch-title {
-            font-size: 0.85rem;
-            color: #aaa;
-            text-transform: uppercase;
-        }
-
-        .clutch-main-val {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #ff5500;
         }
 
         .clutch-grid {
@@ -209,12 +212,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
         .mini-circle {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border: 3px solid #ff5500;
             border-radius: 50%;
             display: flex;
@@ -222,22 +225,71 @@
             justify-content: center;
             font-size: 0.75rem;
             font-weight: bold;
-            background-color: #121212;
+            background-color: #0b0e14;
         }
 
-        .clutch-label {
+        .stat-sub-label {
+            font-size: 0.7rem;
+            color: #6a7688;
+        }
+
+        .stat-block-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 16px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .main-stat-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 15px 0;
+        }
+
+        .main-stat-icon {
+            font-size: 1.5rem;
+        }
+
+        .main-stat-number {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-top: 1px solid #1e2532;
+            padding-top: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
             font-size: 0.75rem;
-            color: #888;
+        }
+
+        .detail-label {
+            color: #8a96a8;
+            font-weight: 600;
+        }
+
+        .detail-val {
+            color: #ffffff;
+            font-weight: bold;
         }
 
         .entry-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
             flex: 1;
             min-width: 280px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .entry-grid {
@@ -248,239 +300,243 @@
         }
 
         .matches-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
             flex: 1;
             min-width: 280px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .match-icons-list {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         .match-badge {
-            width: 28px;
-            height: 28px;
-            background-color: #2a2a2a;
+            width: 26px;
+            height: 26px;
+            background-color: #181f2c;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.7rem;
             border-top: 3px solid #2ecc71;
+            font-weight: bold;
         }
 
         .match-badge.loss {
             border-top-color: #e74c3c;
         }
-
-        /* Додатковий блок для зброї та мап (тепер є і тут!) */
-        .weapons-maps-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            flex: 1;
-            min-width: 280px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .stat-row-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        .stat-row-value {
-            color: #ff5500;
-            font-weight: bold;
-        }
-
         footer {
             text-align: center;
-            color: #666;
-            font-size: 0.9rem;
+            color: #5a6678;
+            font-size: 0.85rem;
             padding: 20px;
-            border-top: 1px solid #222;
+            border-top: 1px solid #181f2c;
             margin-top: auto;
         }
     </style>
 </head>
 <body>
 
+    <div class="top-line"></div>
+
     <header>
-        <a href="index.html" class="logo">CS2 Stat Site</a>
+        <a href="index.html" class="logo">CS2 STAT SITE</a>
         <nav>
-            <a href="index.html">Premier</a>
+            <a href="index.html">PREMIER</a>
             <a href="faceit.html" class="active">FACEIT</a>
         </nav>
     </header>
-[16.10.2026 21:40] Taras: <div class="main-container">
+
+    <div class="main-container">
         
-        <!-- Ліва колонка (FACEIT) -->
-        <div class="left-column">
-            <main class="card">
-                <h2>FACEIT Statistics</h2>
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <span class="stat-label">FACEIT Level</span>
-                        <span class="stat-value" id="faceitLevel">--</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-label">Elo</span>
-                        <span class="stat-value" id="faceitElo">--</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-label">K/D Ratio</span>
-                        <span class="stat-value" id="faceitKd">--</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-label">Win Rate</span>
-                        <span class="stat-value" id="faceitWr">--</span>
-                    </div>
-                </div>
-            </main>
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar">🎮</div>
+                <div class="nickname">FACEIT Player</div>
+            </div>
+            
+            <div class="rank-box">
+                <div class="rank-title">FACEIT Level</div>
+                <div class="rank-val" id="faceitLevelVal">Level 10 (2150 ELO)</div>
+            </div>
+            
+            <div class="rank-box" style="border-left-color: #00d2ff; margin-top: 12px;">
+                <div class="rank-title">Premier Rating</div>
+                <div class="rank-val" id="premierRankVal">-- Rating</div>
+            </div>
         </div>
 
-        <!-- Права колонка (Дашборд) -->
         <div class="dashboard-section">
             
+            <!-- Рядок 1: K/D, HLTV Rating, Clutch Success -->
             <div class="dashboard-row">
                 <div class="big-stat-card">
                     <div class="big-stat-title">K / D</div>
-                    <div class="circle-stat" style="border-color: #ff5500;">
-                        <div class="circle-value">--</div>
-                        <div class="circle-sub">ratio</div>
+                    <div class="circle-stat">
+                        <div class="circle-value">1.24</div>
                     </div>
                 </div>
 
                 <div class="big-stat-card">
-                    <div class="big-stat-title">HLTV Rating</div>
-                    <div class="circle-stat" style="border-color: #f39c12;">
-                        <div class="circle-value">--</div>
-                        <div class="circle-sub">rating</div>
+                    <div class="big-stat-title">HLTV RATING</div>
+                    <div class="circle-stat" style="border-color: #ff5500;">
+                        <div class="circle-value">1.28</div>
                     </div>
                 </div>
 
                 <div class="clutch-card">
-                    <div class="clutch-header">
-                        <span class="clutch-title">Clutch Success</span>
-                        <span class="clutch-main-val">1vX --%</span>
+                    <div class="card-header-title">
+                        <span>CLUTCH SUCCESS</span>
+                        <span style="color: #ff5500; font-size: 1.1rem;">1vX 22%</span>
                     </div>
                     <div class="clutch-grid">
                         <div class="clutch-item">
-                            <div class="mini-circle" style="border-color: #ff5500;">--</div>
-                            <span class="clutch-label">1v1</span>
+                            <div class="mini-circle">70%</div>
+                            <span class="stat-sub-label">1v1</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="mini-circle" style="border-color: #ff5500;">--</div>
-                            <span class="clutch-label">1v2</span>
+                            <div class="mini-circle">30%</div>
+                            <span class="stat-sub-label">1v2</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="mini-circle" style="border-color: #ff5500;">--</div>
-                            <span class="clutch-label">1v3</span>
+                            <div class="mini-circle">11%</div>
+                            <span class="stat-sub-label">1v3</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="mini-circle" style="border-color: #ff5500;">--</div>
-                            <span class="clutch-label">1v4</span>
+                            <div class="mini-circle">2%</div>
+                            <span class="stat-sub-label">1v4</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="mini-circle" style="border-color: #ff5500;">--</div>
-                            <span class="clutch-label">1v5</span>
+                            <div class="mini-circle">1%</div>
+                            <span class="stat-sub-label">1v5</span>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Рядок 2: WIN RATE, HS%, ADR -->
+            <div class="dashboard-row">
+                <div class="stat-block-card">
+                    <div class="card-header-title">WIN RATE</div>
+                    <div class="main-stat-display">
+                        <span class="main-stat-icon">🏆</span>
+                        <span class="main-stat-number">67%</span>
+                    </div>
+                    <div class="details-list">
+                        <div class="detail-row">
+                            <span class="detail-label">PLAYED</span>
+                            <span class="detail-val">1940</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">WON</span>
+                            <span class="detail-val">1303</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">LOST</span>
+                            <span class="detail-val">636</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">TIED</span>
+                            <span class="detail-val">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-block-card">
+                    <div class="card-header-title">HS%</div>
+                    <div class="main-stat-display">
+                        <span class="main-stat-icon">🎯</span>
+                        <span class="main-stat-number">61%</span>
+                    </div>
+                    <div class="details-list">
+                        <div class="detail-row">
+                            <span class="detail-label">KILLS</span>
+                            <span class="detail-val">46952</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">DEATHS</span>
+                            <span class="detail-val">29422</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">ASSISTS</span>
+                            <span class="detail-val">8387</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">HEADSHOTS</span>
+                            <span class="detail-val">28840</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-block-card">
+                    <div class="card-header-title">ADR</div>
+                    <div class="main-stat-display">
+                        <span class="main-stat-icon">💥</span>
+                        <span class="main-stat-number">113</span>
+                    </div>
+                    <div class="details-list">
+                        <div class="detail-row">
+                            <span class="detail-label">KAST</span>
+                            <span class="detail-val">78%</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">DAMAGE</span>
+                            <span class="detail-val">4758227</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">ROUNDS</span>
+                            <span class="detail-val">41985</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Рядок 3: Entry Success & Matches -->
             <div class="dashboard-row">
                 <div class="entry-card">
-                    <div class="clutch-header">
-                        <span class="clutch-title">Entry Success</span>
-                        <span class="clutch-main-val" style="color: #ff5500;">--%</span>
-[16.10.2026 21:40] Taras: </div>
+                    <div class="card-header-title">
+                        <span>ENTRY SUCCESS</span>
+                        <span style="color: #ff5500;">per Round 18%</span>
+                    </div>
                     <div class="entry-grid">
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px; border-color: #ff5500;">
-                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #ff5500;">
+                                <div class="circle-value" style="font-size: 0.95rem;">66%</div>
                             </div>
-                            <span class="clutch-label" style="margin-top: 5px;">Combined</span>
+                            <span class="stat-sub-label" style="margin-top: 5px;">Combined</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px; border-color: #f1c40f;">
-                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #f1c40f;">
+                                <div class="circle-value" style="font-size: 0.95rem;">61%</div>
                             </div>
-                            <span class="clutch-label" style="margin-top: 5px;">T Entries</span>
+                            <span class="stat-sub-label" style="margin-top: 5px;">T Entries</span>
                         </div>
                         <div class="clutch-item">
-                            <div class="circle-stat" style="width: 60px; height: 60px; border-width: 3px; border-color: #3498db;">
-                                <div class="circle-value" style="font-size: 1rem;">--%</div>
+                            <div class="circle-stat" style="width: 55px; height: 55px; border-width: 3px; border-color: #3498db;">
+                                <div class="circle-value" style="font-size: 0.95rem;">70%</div>
                             </div>
-                            <span class="clutch-label" style="margin-top: 5px;">CT Entries</span>
+                            <span class="stat-sub-label" style="margin-top: 5px;">CT Entries</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="matches-card">
-                    <div class="clutch-header">
-                        <span class="clutch-title">Recent Matches</span>
-                    </div>
+                    <div class="card-header-title">MATCHES</div>
                     <div class="match-icons-list">
                         <div class="match-badge">W</div>
-                        <div class="match-badge loss">L</div>
                         <div class="match-badge">W</div>
                         <div class="match-badge">W</div>
                         <div class="match-badge loss">L</div>
                         <div class="match-badge">W</div>
-                        <div class="match-badge loss">L</div>
                         <div class="match-badge">W</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Рядок зброї та мап (тепер симетрично до Premier) -->
-            <div class="dashboard-row">
-                <div class="weapons-maps-card">
-                    <div class="clutch-header">
-                        <span class="clutch-title">Top Weapons / Kills</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>AK-47</span>
-                        <span class="stat-row-value">--</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>M4A1-S / M4A4</span>
-                        <span class="stat-row-value">--</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>AWP</span>
-                        <span class="stat-row-value">--</span>
-                    </div>
-                </div>
-
-                <div class="weapons-maps-card">
-                    <div class="clutch-header">
-                        <span class="clutch-title">Most Played Maps</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>Mirage</span>
-                        <span class="stat-row-value">-- matches</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>Inferno</span>
-                        <span class="stat-row-value">-- matches</span>
-                    </div>
-                    <div class="stat-row-item">
-                        <span>Anubis</span>
-                        <span class="stat-row-value">-- matches</span>
+                        <div class="match-badge">W</div>
+                        <div class="match-badge loss">L</div>
                     </div>
                 </div>
             </div>
