@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[18.10.2026 18:51] Taras: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 
         .top-line {
             height: 3px;
-            background-color: #e74c3c;
+            background-color: #00d2ff;
             width: 100%;
         }
 
@@ -121,8 +121,302 @@
 
         .rank-title {
             font-size: 0.75rem;
-            color: #
-            [18.10.2026 18:47] Taras: <body>
+            color: #8a96a8;
+            text-transform: uppercase;
+        }
+
+        .rank-val {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 3px;
+        }
+
+        .dashboard-section {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            flex: 1;
+        }
+
+        .dashboard-row {
+            display: flex;
+            gap: 18px;
+        }
+
+        .big-stat-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
+            width: 150px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .big-stat-title {
+            font-size: 0.8rem;
+            color: #8a96a8;
+            margin-bottom: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+[18.10.2026 18:51] Taras: .circle-stat {
+            width: 90px;
+            height: 90px;
+            border: 4px solid #00d2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            background-color: #0b0e14;
+        }
+
+        .circle-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .clutch-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
+            flex: 1;
+        }
+
+        .card-header-title {
+            font-size: 0.8rem;
+            color: #8a96a8;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .clutch-grid {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .clutch-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .mini-circle {
+            width: 36px;
+            height: 36px;
+            border: 3px solid #00d2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            background-color: #0b0e14;
+        }
+
+        .stat-sub-label {
+            font-size: 0.7rem;
+            color: #6a7688;
+        }
+
+        .stat-block-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 16px;
+            width: 31%;
+            flex-shrink: 0;
+        }
+
+        .main-stat-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0 15px 0;
+        }
+
+        .main-stat-icon {
+            font-size: 1.5rem;
+        }
+
+        .main-stat-number {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border-top: 1px solid #1e2532;
+            padding-top: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+        }
+
+        .detail-label {
+            color: #8a96a8;
+            font-weight: 600;
+        }
+
+        .detail-val {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .entry-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
+            width: 31%;
+            flex-shrink: 0;
+        }
+
+        .entry-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .matches-full-card {
+            background-color: #12161f;
+            border: 1px solid #1e2532;
+            border-radius: 10px;
+            padding: 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .match-history-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e2532;
+            padding-bottom: 12px;
+        }
+
+        .match-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+[18.10.2026 18:51] Taras: .map-icon {
+            width: 22px;
+            height: 22px;
+            background-color: #181f2c;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .match-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #2ecc71;
+        }
+
+        .match-dot.loss {
+            background-color: #e74c3c;
+        }
+
+        .match-score {
+            font-size: 0.65rem;
+            color: #8a96a8;
+            font-weight: bold;
+        }
+
+        .maps-weapons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .sub-block-card {
+            background-color: #161a25;
+            border: 1px solid #1e2532;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .sub-block-title {
+            font-size: 0.75rem;
+            color: #8a96a8;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .list-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-bottom: 6px;
+        }
+
+        .list-row-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .list-name {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #ffffff;
+        }
+
+        .list-value {
+            color: #ffffff;
+        }
+
+        .progress-bar-bg {
+            height: 3px;
+            background-color: #202736;
+            border-radius: 2px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #00d2ff;
+        }
+
+        footer {
+            text-align: center;
+            color: #5a6678;
+            font-size: 0.85rem;
+            padding: 20px;
+            border-top: 1px solid #181f2c;
+            margin-top: auto;
+        }
+    </style>
+</head>
+[18.10.2026 18:52] Taras: <body>
 
     <div class="top-line"></div>
 
@@ -207,7 +501,7 @@
                         <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot loss"></div><div class="match-score">12:16</div></div>
                         <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot loss"></div><div class="match-score">8:13</div></div>
                         <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:9</div></div>
-[18.10.2026 18:47] Taras: <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
+[18.10.2026 18:52] Taras: <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
                         <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
                         <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot loss"></div><div class="match-score">10:13</div></div>
                         <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
@@ -234,7 +528,7 @@
                         <div class="sub-block-card">
                             <div class="sub-block-title">Most Kills</div>
                             <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 AK-47</span><span class="list-value">22370</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div></div>
-[18.10.2026 18:47] Taras: <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 M4A1-S</span><span class="list-value">7779</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
+[18.10.2026 18:52] Taras: <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 M4A1-S</span><span class="list-value">7779</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
                             <div class="list-row"><div class="list-row-header"><span class="list-name">🎯 AWP</span><span class="list-value">3947</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 30%;"></div></div></div>
                             <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 USP-S</span><span class="list-value">3065</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 25%;"></div></div></div>
                         </div>
@@ -249,7 +543,7 @@
                     </div>
                 </div>
             </div>
-        [18.10.2026 18:48] Taras: <!-- Рядок 2: WIN RATE, HS%, ADR та Entry Success -->
+            [18.10.2026 18:52] Taras: <!-- Рядок 2: WIN RATE, HS%, ADR та Entry Success -->
             <div class="dashboard-row">
                 <div class="stat-block-card">
                     <div class="card-header-title">WIN RATE</div>
@@ -308,7 +602,7 @@
                             <div class="circle-stat" style="width: 50px; height: 50px; border-width: 3px; border-color: #f1c40f;">
                                 <div class="circle-value" style="font-size: 0.85rem;">50%</div>
                             </div>
-[18.10.2026 18:48] Taras: <span class="stat-sub-label" style="margin-top: 5px;">T Entries</span>
+[18.10.2026 18:52] Taras: <span class="stat-sub-label" style="margin-top: 5px;">T Entries</span>
                         </div>
                         <div class="clutch-item">
                             <div class="circle-stat" style="width: 50px; height: 50px; border-width: 3px; border-color: #3498db;">
