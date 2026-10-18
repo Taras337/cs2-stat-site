@@ -1,4 +1,4 @@
-[18.10.2026 20:35] Taras: <!DOCTYPE html>
+[18.10.2026 20:51] Taras: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,12 +114,12 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
-            width: 240px;
+            width: 250px;
             flex-shrink: 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .profile-header {
@@ -130,8 +130,8 @@
         }
 
         .avatar {
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             border-radius: 8px;
             background-color: #1e2532;
             border: 1px solid #2a3447;
@@ -147,64 +147,43 @@
             color: #fff;
         }
 
-        .rank-box {
+        .season-title {
+            font-size: 0.7rem;
+            color: #8a96a8;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+[18.10.2026 20:51] Taras: /* FACEIT Badge Style (як на фото 4) */
+        .faceit-level-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             background-color: #181f2c;
-            border-radius: 8px;
-            padding: 9px 12px;
-            border-left: 3px solid #ff5500;
-        }
-
-        .rank-box.past {
-            border-left-color: #5a6678;
-            background-color: #141a24;
-        }
-
-        .rank-title {
-            font-size: 0.68rem;
-            color: #8a96a8;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-[18.10.2026 20:35] Taras: .rank-val {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            margin-top: 2px;
-        }
-
-        .ranks-modes-section {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 6px;
-            border-top: 1px solid #1e2532;
-            padding-top: 10px;
-        }
-
-        .mode-rank-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #161a25;
-            padding: 6px 10px;
-            border-radius: 6px;
             border: 1px solid #1e2532;
+            padding: 8px 12px;
+            border-radius: 8px;
         }
 
-        .mode-name {
-            font-size: 0.72rem;
-            color: #8a96a8;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .mode-badge {
+        .faceit-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #ff5500;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
+            justify-content: center;
+            box-shadow: 0 0 8px rgba(255, 85, 0, 0.6);
+            flex-shrink: 0;
+        }
+
+        .faceit-elo-val {
+            font-size: 1.05rem;
             font-weight: bold;
-            color: #f1c40f;
+            color: #ffffff;
         }
 
         .dashboard-section {
@@ -268,6 +247,7 @@
             color: #fff;
         }
 
+        /* --- CLUTCH SUCCESS --- */
         .clutch-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -308,46 +288,48 @@
         }
 
         .clutch-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             text-align: center;
-            padding: 0 4px;
+            padding: 0 5px;
         }
 
         .clutch-column {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
+            flex: 1;
         }
 
         .clutch-col-title {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: bold;
             color: #ffffff;
         }
-[18.10.2026 20:35] Taras: .pie-circle {
-            width: 30px;
-            height: 30px;
+
+        .pie-circle {
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: conic-gradient(#ff5500 70%, #182232 0);
-            margin: 3px 0;
+            margin: 4px 0;
         }
-
-        .clutch-pct {
-            font-size: 0.75rem;
+[18.10.2026 20:51] Taras: .clutch-pct {
+            font-size: 0.78rem;
             font-weight: bold;
             color: #ffffff;
         }
 
         .clutch-wl {
-            font-size: 0.58rem;
+            font-size: 0.6rem;
             color: #8a96a8;
             font-weight: bold;
             white-space: nowrap;
         }
 
+        /* --- STAT BLOCKS --- */
         .stat-block-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -397,6 +379,7 @@
             font-weight: bold;
         }
 
+        /* --- ENTRY SUCCESS (ФОТО 6) --- */
         .entry-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -426,7 +409,7 @@
         .entry-table-header {
             display: flex;
             justify-content: flex-end;
-            gap: 12px;
+            gap: 14px;
             font-size: 0.68rem;
             color: #8a96a8;
             font-weight: bold;
@@ -458,12 +441,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
+            gap: 3px;
+            width: 32px;
         }
 
         .pie-mini {
-            width: 25px;
-            height: 25px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: conic-gradient(#ff5500 66%, #182232 0);
         }
@@ -478,6 +462,7 @@
             color: #ffffff;
         }
 
+        /* --- RIGHT MATCHES CARD (ФОТО 5) --- */
         .matches-full-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -503,16 +488,24 @@
             align-items: center;
             gap: 4px;
         }
-[18.10.2026 20:35] Taras: .map-icon {
+[18.10.2026 20:51] Taras: .map-badge-icon {
             width: 22px;
             height: 22px;
-            background-color: #181f2c;
-            border-radius: 4px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
+
+        .map-dust2 { background: radial-gradient(circle, #e67e22, #d35400); }
+        .map-mirage { background: radial-gradient(circle, #e74c3c, #c0392b); }
+        .map-nuke { background: radial-gradient(circle, #f1c40f, #f39c12); }
+        .map-ancient { background: radial-gradient(circle, #2ecc71, #27ae60); }
+        .map-train { background: radial-gradient(circle, #9b59b6, #8e44ad); }
 
         .match-dot {
             width: 8px;
@@ -568,7 +561,7 @@
         .list-name {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             color: #ffffff;
         }
 
@@ -599,14 +592,13 @@
         }
     </style>
 </head>
-[18.10.2026 20:36] Taras: <body>
+[18.10.2026 20:51] Taras: <body>
 
     <div class="top-line"></div>
 
     <header>
         <a href="index.html" class="logo">CS2 STAT SITE</a>
         
-        <!-- Пошуковий рядок -->
         <div class="search-container">
             <span class="search-icon">🔍</span>
             <input type="text" class="search-input" placeholder="Search for a player (Steam ID / Steam Profile Link)...">
@@ -620,30 +612,26 @@
 
     <div class="main-container">
         
-        <!-- Профіль FACEIT: Season 9, Season 8 + Звання ММ і Напарники -->
+        <!-- Профіль FACEIT: Значки FACEIT Level 10 (БЕЗ звань ММ і Напарників) -->
         <div class="profile-card">
             <div class="profile-header">
                 <div class="avatar">🎮</div>
                 <div class="nickname">FACEIT Player</div>
             </div>
-            <div class="rank-box">
-                <div class="rank-title">FACEIT Season 9</div>
-                <div class="rank-val" id="faceitLevelVal">Lvl 10 (2,150 ELO)</div>
-            </div>
-            <div class="rank-box past">
-                <div class="rank-title">FACEIT Season 8</div>
-                <div class="rank-val" id="faceitLevelValPast" style="color: #a0aab8;">Lvl 10 (2,010 ELO)</div>
+
+            <div>
+                <div class="season-title">FACEIT Season 9 (Current)</div>
+                <div class="faceit-level-badge">
+                    <div class="faceit-circle">10</div>
+                    <div class="faceit-elo-val">2,150 ELO</div>
+                </div>
             </div>
 
-            <!-- Блок додаткових звань -->
-            <div class="ranks-modes-section">
-                <div class="mode-rank-row">
-                    <span class="mode-name">Competitive</span>
-                    <span class="mode-badge">🦅 LEM</span>
-                </div>
-                <div class="mode-rank-row">
-                    <span class="mode-name">Wingman</span>
-                    <span class="mode-badge">👑 Global</span>
+            <div>
+                <div class="season-title">FACEIT Season 8 (Past)</div>
+                <div class="faceit-level-badge" style="opacity: 0.8;">
+                    <div class="faceit-circle">10</div>
+                    <div class="faceit-elo-val" style="color: #a0aab8;">2,010 ELO</div>
                 </div>
             </div>
         </div>
@@ -687,11 +675,11 @@
                                 <span class="clutch-wl">W:292/L:671</span>
                             </div>
                             <div class="clutch-column">
-[18.10.2026 20:36] Taras: <span class="clutch-col-title">1v3</span>
+                                <span class="clutch-col-title">1v3</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 11%, #182232 0);"></div>
                                 <span class="clutch-pct">11%</span>
                                 <span class="clutch-wl">W:119/L:988</span>
-                            </div>
+[18.10.2026 20:51] Taras: </div>
                             <div class="clutch-column">
                                 <span class="clutch-col-title">1v4</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 2%, #182232 0);"></div>
@@ -744,12 +732,12 @@
                         <div class="clutch-header-title">ADR</div>
                         <div class="main-stat-display">
                             <span class="main-stat-icon">💥</span>
-[18.10.2026 20:36] Taras: <span class="main-stat-number">113</span>
+                            <span class="main-stat-number">113</span>
                         </div>
                         <div class="divider-line"><div class="orange-dot"></div></div>
                         <div class="details-list">
                             <div class="detail-row"><span class="detail-label">KAST</span><span class="detail-val">78%</span></div>
-                            <div class="detail-row"><span class="detail-label">DAMAGE</span><span class="detail-val">4758227</span></div>
+[18.10.2026 20:51] Taras: <div class="detail-row"><span class="detail-label">DAMAGE</span><span class="detail-val">4758227</span></div>
                             <div class="detail-row"><span class="detail-label">ROUNDS</span><span class="detail-val">41985</span></div>
                         </div>
                     </div>
@@ -786,36 +774,37 @@
                 </div>
 
             </div>
-            [18.10.2026 20:36] Taras: <div class="matches-full-card">
+            [18.10.2026 20:52] Taras: <div class="matches-full-card">
                 <div class="clutch-header-title">MATCHES</div>
                 <div class="match-history-row">
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
-                    <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot loss"></div><div class="match-score">12:16</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot loss"></div><div class="match-score">8:13</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:9</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot loss"></div><div class="match-score">10:13</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
-                    <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-dust2">D2</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-mirage">MRG</div><div class="match-dot loss"></div><div class="match-score">12:16</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-nuke">NKE</div><div class="match-dot loss"></div><div class="match-score">8:13</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-ancient">ANC</div><div class="match-dot"></div><div class="match-score">13:9</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-dust2">D2</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-mirage">MRG</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-train">TRN</div><div class="match-dot loss"></div><div class="match-score">10:13</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-nuke">NKE</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
+                    <div class="match-column"><div class="map-badge-icon map-ancient">ANC</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
                 </div>
 
                 <div class="maps-weapons-grid">
                     <div class="sub-block-card">
                         <div class="sub-block-title">Most Played</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">721</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">359</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 55%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">310</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🗿 de_anubis</span><span class="list-value">256</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 35%;"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-dust2" style="width:16px;height:16px;font-size:0.5rem;">D2</div> de_dust2</span><span class="list-value">121</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-mirage" style="width:16px;height:16px;font-size:0.5rem;">MRG</div> de_mirage</span><span class="list-value">93</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 65%;"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-nuke" style="width:16px;height:16px;font-size:0.5rem;">NKE</div> de_nuke</span><span class="list-value">78</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-ancient" style="width:16px;height:16px;font-size:0.5rem;">ANC</div> de_ancient</span><span class="list-value">42</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 30%;"></div></div></div>
                     </div>
 
                     <div class="sub-block-card">
                         <div class="sub-block-title">Most Success</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🎡 de_vertigo</span><span class="list-value">80%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 80%, #e74c3c 20%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">70%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 70%, #e74c3c 30%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">68%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 68%, #e74c3c 32%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">67%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 67%, #e74c3c 33%);"></div></div></div>
-                        </div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-nuke" style="width:16px;height:16px;font-size:0.5rem;">NKE</div> de_nuke</span><span class="list-value">80%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 80%, #e74c3c 20%);"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-train" style="width:16px;height:16px;font-size:0.5rem;">TRN</div> de_train</span><span class="list-value">100%</span></div><div class="progress-bar-bg"><div
+[18.10.2026 20:52] Taras: class="progress-bar-fill" style="background: #2ecc71;"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-dust2" style="width:16px;height:16px;font-size:0.5rem;">D2</div> de_dust2</span><span class="list-value">60%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 60%, #e74c3c 40%);"></div></div></div>
+                        <div class="list-row"><div class="list-row-header"><span class="list-name"><div class="map-badge-icon map-mirage" style="width:16px;height:16px;font-size:0.5rem;">MRG</div> de_mirage</span><span class="list-value">54%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 54%, #e74c3c 46%);"></div></div></div>
+                    </div>
 
                     <div class="sub-block-card">
                         <div class="sub-block-title">Most Kills</div>
