@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+[18.10.2026 20:35] Taras: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,31 +30,64 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
+            padding: 12px 30px;
             background-color: #12161f;
             border-bottom: 1px solid #1e2532;
+            gap: 20px;
         }
 
         .logo {
             color: #00d2ff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background-color: #0b0e14;
+            border: 1px solid #1e2532;
+            border-radius: 6px;
+            padding: 8px 14px 8px 36px;
+            color: #ffffff;
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: #ff5500;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5a6678;
+            font-size: 0.85rem;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         nav a {
             color: #8a96a8;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 6px;
             transition: all 0.3s ease;
         }
@@ -70,7 +103,7 @@
         }
 
         .main-container {
-            padding: 20px 40px;
+            padding: 20px 30px;
             display: flex;
             gap: 20px;
             align-items: flex-start;
@@ -80,25 +113,25 @@
             background-color: #12161f;
             border: 1px solid #1e2532;
             border-radius: 10px;
-            padding: 20px;
-            width: 230px;
+            padding: 18px;
+            width: 240px;
             flex-shrink: 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .profile-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .avatar {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 8px;
             background-color: #1e2532;
             border: 1px solid #2a3447;
@@ -117,7 +150,7 @@
         .rank-box {
             background-color: #181f2c;
             border-radius: 8px;
-            padding: 10px 12px;
+            padding: 9px 12px;
             border-left: 3px solid #ff5500;
         }
 
@@ -127,17 +160,51 @@
         }
 
         .rank-title {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: #8a96a8;
             text-transform: uppercase;
             font-weight: bold;
         }
-
-        .rank-val {
-            font-size: 1.05rem;
+[18.10.2026 20:35] Taras: .rank-val {
+            font-size: 1rem;
             font-weight: bold;
             color: #fff;
             margin-top: 2px;
+        }
+
+        .ranks-modes-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 6px;
+            border-top: 1px solid #1e2532;
+            padding-top: 10px;
+        }
+
+        .mode-rank-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #161a25;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #1e2532;
+        }
+
+        .mode-name {
+            font-size: 0.72rem;
+            color: #8a96a8;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .mode-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #f1c40f;
         }
 
         .dashboard-section {
@@ -151,7 +218,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            width: 630px;
+            width: 650px;
             flex-shrink: 0;
         }
 
@@ -160,7 +227,8 @@
             gap: 15px;
             align-items: stretch;
         }
-[18.10.2026 19:44] Taras: .big-stat-card {
+
+        .big-stat-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
             border-radius: 10px;
@@ -236,47 +304,48 @@
             background-color: #ff5500;
             border-radius: 50%;
             top: -2px;
-            left: 30%;
+            left: 20%;
         }
 
         .clutch-grid {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
             text-align: center;
+            padding: 0 4px;
         }
 
         .clutch-column {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
         }
 
         .clutch-col-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             color: #ffffff;
         }
-
-        .pie-circle {
-            width: 32px;
-            height: 32px;
+[18.10.2026 20:35] Taras: .pie-circle {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: conic-gradient(#ff5500 70%, #182232 0);
-            margin: 4px 0;
+            margin: 3px 0;
         }
 
         .clutch-pct {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             color: #ffffff;
         }
 
         .clutch-wl {
-            font-size: 0.6rem;
+            font-size: 0.58rem;
             color: #8a96a8;
             font-weight: bold;
-            margin-top: 2px;
+            white-space: nowrap;
         }
 
         .stat-block-card {
@@ -335,7 +404,8 @@
             padding: 14px;
             flex: 1.2;
         }
-[18.10.2026 19:44] Taras: .entry-top-title {
+
+        .entry-top-title {
             font-size: 0.75rem;
             color: #8a96a8;
             font-weight: bold;
@@ -343,13 +413,13 @@
         }
 
         .entry-sub-val {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #8a96a8;
             margin-top: 4px;
         }
 
         .entry-sub-val b {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #ffffff;
         }
 
@@ -392,8 +462,8 @@
         }
 
         .pie-mini {
-            width: 26px;
-            height: 26px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             background: conic-gradient(#ff5500 66%, #182232 0);
         }
@@ -433,8 +503,7 @@
             align-items: center;
             gap: 4px;
         }
-
-        .map-icon {
+[18.10.2026 20:35] Taras: .map-icon {
             width: 22px;
             height: 22px;
             background-color: #181f2c;
@@ -506,7 +575,8 @@
         .list-value {
             color: #ffffff;
         }
-[18.10.2026 19:44] Taras: .progress-bar-bg {
+
+        .progress-bar-bg {
             height: 3px;
             background-color: #202736;
             border-radius: 2px;
@@ -529,12 +599,19 @@
         }
     </style>
 </head>
-[18.10.2026 19:46] Taras: <body>
+[18.10.2026 20:36] Taras: <body>
 
     <div class="top-line"></div>
 
     <header>
         <a href="index.html" class="logo">CS2 STAT SITE</a>
+        
+        <!-- Пошуковий рядок -->
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search for a player (Steam ID / Steam Profile Link)...">
+        </div>
+
         <nav>
             <a href="index.html">PREMIER</a>
             <a href="faceit.html" class="active">FACEIT</a>
@@ -543,19 +620,31 @@
 
     <div class="main-container">
         
-        <!-- Лівий профіль FACEIT: Поточний Season 9 і минулий Season 8 -->
+        <!-- Профіль FACEIT: Season 9, Season 8 + Звання ММ і Напарники -->
         <div class="profile-card">
             <div class="profile-header">
                 <div class="avatar">🎮</div>
                 <div class="nickname">FACEIT Player</div>
             </div>
             <div class="rank-box">
-                <div class="rank-title">FACEIT Season 9 (Current)</div>
+                <div class="rank-title">FACEIT Season 9</div>
                 <div class="rank-val" id="faceitLevelVal">Lvl 10 (2,150 ELO)</div>
             </div>
             <div class="rank-box past">
-                <div class="rank-title">FACEIT Season 8 (Past)</div>
+                <div class="rank-title">FACEIT Season 8</div>
                 <div class="rank-val" id="faceitLevelValPast" style="color: #a0aab8;">Lvl 10 (2,010 ELO)</div>
+            </div>
+
+            <!-- Блок додаткових звань -->
+            <div class="ranks-modes-section">
+                <div class="mode-rank-row">
+                    <span class="mode-name">Competitive</span>
+                    <span class="mode-badge">🦅 LEM</span>
+                </div>
+                <div class="mode-rank-row">
+                    <span class="mode-name">Wingman</span>
+                    <span class="mode-badge">👑 Global</span>
+                </div>
             </div>
         </div>
 
@@ -589,31 +678,31 @@
                                 <span class="clutch-col-title">1v1</span>
                                 <div class="pie-circle"></div>
                                 <span class="clutch-pct">70%</span>
-                                <span class="clutch-wl">W:464 / L:173</span>
+                                <span class="clutch-wl">W:464/L:173</span>
                             </div>
                             <div class="clutch-column">
                                 <span class="clutch-col-title">1v2</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 30%, #182232 0);"></div>
                                 <span class="clutch-pct">30%</span>
-                                <span class="clutch-wl">W:292 / L:671</span>
+                                <span class="clutch-wl">W:292/L:671</span>
                             </div>
                             <div class="clutch-column">
-                                <span class="clutch-col-title">1v3</span>
+[18.10.2026 20:36] Taras: <span class="clutch-col-title">1v3</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 11%, #182232 0);"></div>
                                 <span class="clutch-pct">11%</span>
-                                <span class="clutch-wl">W:119 / L:988</span>
+                                <span class="clutch-wl">W:119/L:988</span>
                             </div>
                             <div class="clutch-column">
                                 <span class="clutch-col-title">1v4</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 2%, #182232 0);"></div>
                                 <span class="clutch-pct">2%</span>
-                                <span class="clutch-wl">W:17 / L:951</span>
-[18.10.2026 19:46] Taras: </div>
+                                <span class="clutch-wl">W:17/L:951</span>
+                            </div>
                             <div class="clutch-column">
                                 <span class="clutch-col-title">1v5</span>
                                 <div class="pie-circle" style="background: conic-gradient(#ff5500 1%, #182232 0);"></div>
                                 <span class="clutch-pct">1%</span>
-                                <span class="clutch-wl">W:3 / L:483</span>
+                                <span class="clutch-wl">W:3/L:483</span>
                             </div>
                         </div>
                     </div>
@@ -655,7 +744,7 @@
                         <div class="clutch-header-title">ADR</div>
                         <div class="main-stat-display">
                             <span class="main-stat-icon">💥</span>
-                            <span class="main-stat-number">113</span>
+[18.10.2026 20:36] Taras: <span class="main-stat-number">113</span>
                         </div>
                         <div class="divider-line"><div class="orange-dot"></div></div>
                         <div class="details-list">
@@ -669,7 +758,8 @@
                         <div class="entry-top-title">ENTRY SUCCESS</div>
                         <div class="entry-sub-val">per Round <b>18%</b></div>
                         <div class="divider-line"><div class="orange-dot"></div></div>
-[18.10.2026 19:46] Taras: <div class="entry-table-header">
+
+                        <div class="entry-table-header">
                             <span>Combined</span>
                             <span>T Entries</span>
                             <span>CT Entries</span>
@@ -696,7 +786,7 @@
                 </div>
 
             </div>
-            [18.10.2026 19:46] Taras: <div class="matches-full-card">
+            [18.10.2026 20:36] Taras: <div class="matches-full-card">
                 <div class="clutch-header-title">MATCHES</div>
                 <div class="match-history-row">
                     <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
@@ -725,7 +815,7 @@
                         <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">70%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 70%, #e74c3c 30%);"></div></div></div>
                         <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">68%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 68%, #e74c3c 32%);"></div></div></div>
                         <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">67%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 67%, #e74c3c 33%);"></div></div></div>
-[18.10.2026 19:46] Taras: </div>
+                        </div>
 
                     <div class="sub-block-card">
                         <div class="sub-block-title">Most Kills</div>
