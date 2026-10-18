@@ -1,4 +1,4 @@
-[18.10.2026 20:33] Taras: <!DOCTYPE html>
+[18.10.2026 20:49] Taras: <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,12 +114,12 @@
             border: 1px solid #1e2532;
             border-radius: 10px;
             padding: 18px;
-            width: 240px;
+            width: 250px;
             flex-shrink: 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .profile-header {
@@ -130,8 +130,8 @@
         }
 
         .avatar {
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             border-radius: 8px;
             background-color: #1e2532;
             border: 1px solid #2a3447;
@@ -147,29 +147,42 @@
             color: #fff;
         }
 
-        .rank-box {
-            background-color: #181f2c;
-            border-radius: 8px;
-            padding: 9px 12px;
-            border-left: 3px solid #00d2ff;
-        }
-
-        .rank-box.past {
-            border-left-color: #5a6678;
-            background-color: #141a24;
-        }
-
-        .rank-title {
-            font-size: 0.68rem;
+        /* CS2 Premier Badge Style (як на фото 2) */
+        .season-title {
+            font-size: 0.7rem;
             color: #8a96a8;
             text-transform: uppercase;
             font-weight: bold;
+            margin-bottom: 4px;
         }
-[18.10.2026 20:33] Taras: .rank-val {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            margin-top: 2px;
+[18.10.2026 20:49] Taras: .cs2-rating-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 16px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: #ffffff;
+            transform: skewX(-12deg);
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            margin-bottom: 6px;
+        }
+
+        .cs2-rating-badge span {
+            transform: skewX(12deg);
+        }
+
+        .cs2-purple {
+            background: linear-gradient(135deg, #a020f0, #d87093);
+            border: 1px solid #e6a8d7;
+            text-shadow: 0 0 8px rgba(255,255,255,0.6);
+        }
+
+        .cs2-blue {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            border: 1px solid #70e2ff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.6);
         }
 
         /* Звання ММ та Напарники */
@@ -298,8 +311,7 @@
             margin: 8px 0 12px 0;
             position: relative;
         }
-
-        .orange-dot {
+[18.10.2026 20:49] Taras: .orange-dot {
             position: absolute;
             width: 5px;
             height: 5px;
@@ -310,41 +322,43 @@
         }
 
         .clutch-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             text-align: center;
-            padding: 0 4px;
+            padding: 0 5px;
         }
 
         .clutch-column {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
+            flex: 1;
         }
 
         .clutch-col-title {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: bold;
             color: #ffffff;
         }
-[18.10.2026 20:33] Taras: .pie-circle {
-            width: 30px;
-            height: 30px;
+
+        .pie-circle {
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: conic-gradient(#00d2ff 65%, #182232 0);
-            margin: 3px 0;
+            margin: 4px 0;
         }
 
         .clutch-pct {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: bold;
             color: #ffffff;
         }
 
         .clutch-wl {
-            font-size: 0.58rem;
+            font-size: 0.6rem;
             color: #8a96a8;
             font-weight: bold;
             white-space: nowrap;
@@ -400,7 +414,7 @@
             font-weight: bold;
         }
 
-        /* --- ENTRY SUCCESS --- */
+        /* --- ENTRY SUCCESS (ФОТО 6) --- */
         .entry-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -430,7 +444,7 @@
         .entry-table-header {
             display: flex;
             justify-content: flex-end;
-            gap: 12px;
+            gap: 14px;
             font-size: 0.68rem;
             color: #8a96a8;
             font-weight: bold;
@@ -462,17 +476,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
+            gap: 3px;
+            width: 32px;
         }
 
         .pie-mini {
-            width: 25px;
-            height: 25px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: conic-gradient(#00d2ff 51%, #182232 0);
         }
-
-        .pie-mini.t-side {
+[18.10.2026 20:49] Taras: .pie-mini.t-side {
             background: conic-gradient(#f1c40f 49%, #182232 0);
         }
 
@@ -482,7 +496,7 @@
             color: #ffffff;
         }
 
-        /* --- RIGHT MATCHES CARD --- */
+        /* --- RIGHT MATCHES CARD (ФОТО 5) --- */
         .matches-full-card {
             background-color: #12161f;
             border: 1px solid #1e2532;
@@ -501,23 +515,32 @@
             border-bottom: 1px solid #1e2532;
             padding-bottom: 10px;
         }
-[18.10.2026 20:33] Taras: .match-column {
+
+        .match-column {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 4px;
         }
 
-        .map-icon {
+        .map-badge-icon {
             width: 22px;
             height: 22px;
-            background-color: #181f2c;
-            border-radius: 4px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
+
+        .map-dust2 { background: radial-gradient(circle, #e67e22, #d35400); }
+        .map-mirage { background: radial-gradient(circle, #e74c3c, #c0392b); }
+        .map-nuke { background: radial-gradient(circle, #f1c40f, #f39c12); }
+        .map-ancient { background: radial-gradient(circle, #2ecc71, #27ae60); }
+        .map-train { background: radial-gradient(circle, #9b59b6, #8e44ad); }
 
         .match-dot {
             width: 8px;
@@ -573,7 +596,7 @@
         .list-name {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             color: #ffffff;
         }
 
@@ -604,14 +627,13 @@
         }
     </style>
 </head>
-[18.10.2026 20:34] Taras: <body>
+[18.10.2026 20:50] Taras: <body>
 
     <div class="top-line"></div>
 
     <header>
         <a href="index.html" class="logo">CS2 STAT SITE</a>
         
-        <!-- Пошуковий рядок -->
         <div class="search-container">
             <span class="search-icon">🔍</span>
             <input type="text" class="search-input" placeholder="Search for a player (Steam ID / Steam Profile Link)...">
@@ -625,22 +647,23 @@
 
     <div class="main-container">
         
-        <!-- Профіль Premier: Season 5, Season 4 + Звання ММ і Напарники -->
+        <!-- Профіль Premier: Плашки CS Rating (як на фото 2) + Звання ММ і Напарники -->
         <div class="profile-card">
             <div class="profile-header">
                 <div class="avatar">👤</div>
                 <div class="nickname">Player Profile</div>
             </div>
-            <div class="rank-box">
-                <div class="rank-title">Premier Season 5</div>
-                <div class="rank-val" id="premierRankVal">18,450 CS Rating</div>
-            </div>
-            <div class="rank-box past">
-                <div class="rank-title">Premier Season 4</div>
-                <div class="rank-val" id="premierRankValPast" style="color: #a0aab8;">16,800 CS Rating</div>
+
+            <div>
+                <div class="season-title">Premier Season 5 (Current)</div>
+                <div class="cs2-rating-badge cs2-purple"><span>18,450</span></div>
             </div>
 
-            <!-- Блок додаткових звань -->
+            <div>
+                <div class="season-title">Premier Season 4 (Past)</div>
+                <div class="cs2-rating-badge cs2-blue"><span>16,800</span></div>
+            </div>
+
             <div class="ranks-modes-section">
                 <div class="mode-rank-row">
                     <span class="mode-name">Competitive</span>
@@ -692,9 +715,9 @@
                                 <span class="clutch-wl">W:88/L:249</span>
                             </div>
                             <div class="clutch-column">
-[18.10.2026 20:34] Taras: <span class="clutch-col-title">1v3</span>
+                                <span class="clutch-col-title">1v3</span>
                                 <div class="pie-circle" style="background: conic-gradient(#00d2ff 7%, #182232 0);"></div>
-                                <span class="clutch-pct">7%</span>
+[18.10.2026 20:50] Taras: <span class="clutch-pct">7%</span>
                                 <span class="clutch-wl">W:27/L:356</span>
                             </div>
                             <div class="clutch-column">
@@ -749,10 +772,10 @@
                         <div class="clutch-header-title">ADR</div>
                         <div class="main-stat-display">
                             <span class="main-stat-icon">💥</span>
-[18.10.2026 20:34] Taras: <span class="main-stat-number">79</span>
+                            <span class="main-stat-number">79</span>
                         </div>
                         <div class="divider-line"><div class="orange-dot"></div></div>
-                        <div class="details-list">
+[18.10.2026 20:50] Taras: <div class="details-list">
                             <div class="detail-row"><span class="detail-label">KAST</span><span class="detail-val">71%</span></div>
                             <div class="detail-row"><span class="detail-label">DAMAGE</span><span class="detail-val">837464</span></div>
                             <div class="detail-row"><span class="detail-label">ROUNDS</span><span class="detail-val">10613</span></div>
@@ -791,62 +814,190 @@
                 </div>
 
             </div>
-            [18.10.2026 20:34] Taras: <div class="matches-full-card">
-                <div class="clutch-header-title">MATCHES</div>
-                <div class="match-history-row">
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
-                    <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot loss"></div><div class="match-score">12:16</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot loss"></div><div class="match-score">8:13</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:9</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">16:14</div></div>
-                    <div class="match-column"><div class="map-icon">🏰</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot loss"></div><div class="match-score">10:13</div></div>
-                    <div class="match-column"><div class="map-icon">⚙️</div><div class="match-dot"></div><div class="match-score">13:11</div></div>
-                    <div class="match-column"><div class="map-icon">⭐</div><div class="match-dot"></div><div class="match-score">13:10</div></div>
-                </div>
+            [18.10.2026 20:50] Taras: <body>
 
-                <div class="maps-weapons-grid">
-                    <div class="sub-block-card">
-                        <div class="sub-block-title">Most Played</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">721</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">359</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 55%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">310</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🗿 de_anubis</span><span class="list-value">256</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 35%;"></div></div></div>
-                    </div>
+    <div class="top-line"></div>
 
-                    <div class="sub-block-card">
-                        <div class="sub-block-title">Most Success</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🎡 de_vertigo</span><span class="list-value">80%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 80%, #e74c3c 20%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">⚙️ de_dust2</span><span class="list-value">70%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 70%, #e74c3c 30%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏰 de_mirage</span><span class="list-value">68%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 68%, #e74c3c 32%);"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🏛️ de_ancient</span><span class="list-value">67%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="background: linear-gradient(90deg, #2ecc71 67%, #e74c3c 33%);"></div></div></div>
-[18.10.2026 20:34] Taras: </div>
-
-                    <div class="sub-block-card">
-                        <div class="sub-block-title">Most Kills</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 AK-47</span><span class="list-value">22370</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 M4A1-S</span><span class="list-value">7779</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🎯 AWP</span><span class="list-value">3947</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 30%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 USP-S</span><span class="list-value">3065</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 25%;"></div></div></div>
-                    </div>
-
-                    <div class="sub-block-card">
-                        <div class="sub-block-title">HS%</div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 Desert Eagle</span><span class="list-value">100%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 USP-S</span><span class="list-value">94%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 94%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 Glock-18</span><span class="list-value">92%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 92%;"></div></div></div>
-                        <div class="list-row"><div class="list-row-header"><span class="list-name">🔫 AK-47</span><span class="list-value">87%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 87%;"></div></div></div>
-                    </div>
-                </div>
-            </div>
-
+    <header>
+        <a href="index.html" class="logo">CS2 STAT SITE</a>
+        
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search for a player (Steam ID / Steam Profile Link)...">
         </div>
 
-    </div>
+        <nav>
+            <a href="index.html" class="active">PREMIER</a>
+            <a href="faceit.html">FACEIT</a>
+        </nav>
+    </header>
 
-    <footer>
-        CS2 Stat Site © 2026
-    </footer>
+    <div class="main-container">
+        
+        <!-- Профіль Premier: Плашки CS Rating (як на фото 2) + Звання ММ і Напарники -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar">👤</div>
+                <div class="nickname">Player Profile</div>
+            </div>
 
-</body>
-</html>
+            <div>
+                <div class="season-title">Premier Season 5 (Current)</div>
+                <div class="cs2-rating-badge cs2-purple"><span>18,450</span></div>
+            </div>
+
+            <div>
+                <div class="season-title">Premier Season 4 (Past)</div>
+                <div class="cs2-rating-badge cs2-blue"><span>16,800</span></div>
+            </div>
+
+            <div class="ranks-modes-section">
+                <div class="mode-rank-row">
+                    <span class="mode-name">Competitive</span>
+                    <span class="mode-badge">🦅 LEM</span>
+                </div>
+                <div class="mode-rank-row">
+                    <span class="mode-name">Wingman</span>
+                    <span class="mode-badge">👑 Global</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-section">
+            
+            <div class="left-subgrid">
+                
+                <!-- РЯДОК 1: K/D, HLTV, CLUTCH SUCCESS -->
+                <div class="dashboard-row">
+                    <div class="big-stat-card">
+                        <div class="big-stat-title">K / D</div>
+                        <div class="circle-stat">
+                            <div class="circle-value">1.01</div>
+                        </div>
+                    </div>
+
+                    <div class="big-stat-card">
+                        <div class="big-stat-title">HLTV RATING</div>
+                        <div class="circle-stat" style="border-color: #2ecc71;">
+                            <div class="circle-value">1.11</div>
+                        </div>
+                    </div>
+
+                    <div class="clutch-card">
+                        <div class="clutch-header-title">CLUTCH SUCCESS</div>
+                        <div class="clutch-main-val">1vX <b>19%</b></div>
+                        <div class="divider-line"><div class="orange-dot"></div></div>
+                        
+                        <div class="clutch-grid">
+                            <div class="clutch-column">
+                                <span class="clutch-col-title">1v1</span>
+                                <div class="pie-circle"></div>
+                                <span class="clutch-pct">65%</span>
+                                <span class="clutch-wl">W:141/L:76</span>
+                            </div>
+                            <div class="clutch-column">
+                                <span class="clutch-col-title">1v2</span>
+                                <div class="pie-circle" style="background: conic-gradient(#00d2ff 26%, #182232 0);"></div>
+                                <span class="clutch-pct">26%</span>
+                                <span class="clutch-wl">W:88/L:249</span>
+                            </div>
+                            <div class="clutch-column">
+                                <span class="clutch-col-title">1v3</span>
+                                <div class="pie-circle" style="background: conic-gradient(#00d2ff 7%, #182232 0);"></div>
+[18.10.2026 20:50] Taras: <span class="clutch-pct">7%</span>
+                                <span class="clutch-wl">W:27/L:356</span>
+                            </div>
+                            <div class="clutch-column">
+                                <span class="clutch-col-title">1v4</span>
+                                <div class="pie-circle" style="background: conic-gradient(#00d2ff 1%, #182232 0);"></div>
+                                <span class="clutch-pct">1%</span>
+                                <span class="clutch-wl">W:3/L:293</span>
+                            </div>
+                            <div class="clutch-column">
+                                <span class="clutch-col-title">1v5</span>
+                                <div class="pie-circle" style="background: conic-gradient(#00d2ff 1%, #182232 0);"></div>
+                                <span class="clutch-pct">1%</span>
+                                <span class="clutch-wl">W:1/L:151</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- РЯДОК 2: WIN RATE, HS%, ADR, ENTRY SUCCESS -->
+                <div class="dashboard-row">
+                    <div class="stat-block-card">
+                        <div class="clutch-header-title">WIN RATE</div>
+                        <div class="main-stat-display">
+                            <span class="main-stat-icon">🏆</span>
+                            <span class="main-stat-number">51%</span>
+                        </div>
+                        <div class="divider-line"><div class="orange-dot"></div></div>
+                        <div class="details-list">
+                            <div class="detail-row"><span class="detail-label">PLAYED</span><span class="detail-val">496</span></div>
+                            <div class="detail-row"><span class="detail-label">WON</span><span class="detail-val">252</span></div>
+                            <div class="detail-row"><span class="detail-label">LOST</span><span class="detail-val">241</span></div>
+                            <div class="detail-row"><span class="detail-label">TIED</span><span class="detail-val">3</span></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-block-card">
+                        <div class="clutch-header-title">HS%</div>
+                        <div class="main-stat-display">
+                            <span class="main-stat-icon">🎯</span>
+                            <span class="main-stat-number">45%</span>
+                        </div>
+                        <div class="divider-line"><div class="orange-dot"></div></div>
+                        <div class="details-list">
+                            <div class="detail-row"><span class="detail-label">KILLS</span><span class="detail-val">7710</span></div>
+                            <div class="detail-row"><span class="detail-label">DEATHS</span><span class="detail-val">7613</span></div>
+                            <div class="detail-row"><span class="detail-label">ASSISTS</span><span class="detail-val">2478</span></div>
+                            <div class="detail-row"><span class="detail-label">HEADSHOTS</span><span class="detail-val">3485</span></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-block-card">
+                        <div class="clutch-header-title">ADR</div>
+                        <div class="main-stat-display">
+                            <span class="main-stat-icon">💥</span>
+                            <span class="main-stat-number">79</span>
+                        </div>
+                        <div class="divider-line"><div class="orange-dot"></div></div>
+[18.10.2026 20:50] Taras: <div class="details-list">
+                            <div class="detail-row"><span class="detail-label">KAST</span><span class="detail-val">71%</span></div>
+                            <div class="detail-row"><span class="detail-label">DAMAGE</span><span class="detail-val">837464</span></div>
+                            <div class="detail-row"><span class="detail-label">ROUNDS</span><span class="detail-val">10613</span></div>
+                        </div>
+                    </div>
+
+                    <div class="entry-card">
+                        <div class="entry-top-title">ENTRY SUCCESS</div>
+                        <div class="entry-sub-val">per Round <b>9%</b></div>
+                        <div class="divider-line"><div class="orange-dot"></div></div>
+
+                        <div class="entry-table-header">
+                            <span>Combined</span>
+                            <span>T Entries</span>
+                            <span>CT Entries</span>
+                        </div>
+
+                        <div class="entry-row">
+                            <div class="entry-row-label">Entry<br>Success</div>
+                            <div class="entry-pies-group">
+                                <div class="entry-pie-item"><div class="pie-mini"></div><span class="entry-pct-text">51%</span></div>
+                                <div class="entry-pie-item"><div class="pie-mini t-side"></div><span class="entry-pct-text">49%</span></div>
+                                <div class="entry-pie-item"><div class="pie-mini"></div><span class="entry-pct-text">53%</span></div>
+                            </div>
+                        </div>
+
+                        <div class="entry-row">
+                            <div class="entry-row-label">Entry<br>Attempts</div>
+                            <div class="entry-pies-group">
+                                <div class="entry-pie-item"><div class="pie-mini" style="background: conic-gradient(#00d2ff 17%, #182232 0);"></div><span class="entry-pct-text">17%</span></div>
+                                <div class="entry-pie-item"><div class="pie-mini t-side" style="background: conic-gradient(#f1c40f 15%, #182232 0);"></div><span class="entry-pct-text">15%</span></div>
+                                <div class="entry-pie-item"><div class="pie-mini" style="background: conic-gradient(#00d2ff 18%, #182232 0);"></div><span class="entry-pct-text">18%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
